@@ -1,0 +1,576 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ================= RESET ================= */
+:root{
+  --primary:#0d6efd;
+  --primary-dark:#0b5ed7;
+  --bg:#f4f9ff;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --shadow:0 10px 25px rgba(2,8,23,.08);
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background:#f4f9ff;
+  color:var(--text);
+}
+
+/* ===================================================== */
+/* 🔵 FIXED FULL WIDTH NAVBAR (ALL PAGES) */
+/* ===================================================== */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 50px;
+  background:linear-gradient(90deg,#1d4ed8,#3b82f6);
+  color:white;
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+  z-index:999;
+}
+
+/* spacing for pages WITH navbar */
+body:not(.login-page){
+  padding-top:95px;
+}
+
+/* LEFT SIDE */
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  width:48px;
+  height:48px;
+  background:white;
+  padding:6px;
+  border-radius:10px;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.05;
+}
+
+.brand-title{
+  font-size:22px;
+  font-weight:800;
+}
+
+.brand-sub{
+  font-size:13px;
+  opacity:.9;
+}
+
+/* RIGHT MENU */
+.nav-links{
+  display:flex;
+  gap:12px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-size:14px;
+  font-weight:600;
+  padding:10px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,.15);
+  transition:.2s;
+}
+.nav-links a:hover{
+  background:rgba(255,255,255,.30);
+}
+
+/* ===================================================== */
+/* LAYOUT */
+/* ===================================================== */
+.container{
+  max-width:1700px;
+  margin:auto;
+  padding:30px 40px 40px;
+}
+
+.panel{
+  background:#fff;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:var(--shadow);
+}
+
+.page-title h1{margin:0;font-size:26px}
+.page-title p{margin:0;color:var(--muted);font-size:13px}
+
+/* ===================================================== */
+/* FORMS */
+/* ===================================================== */
+form.form{display:grid; gap:14px}
+.label{font-size:13px;color:var(--muted);font-weight:700}
+
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  font-size:15px;
+}
+
+.form-wide{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:18px;
+}
+
+.service-box{
+  background:#f8fbff;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:15px;
+}
+
+/* ===================================================== */
+/* BUTTONS */
+/* ===================================================== */
+.btn{
+  border:none;
+  background:var(--primary);
+  color:#fff;
+  font-weight:800;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+.btn.big{
+  width:170px;
+  height:90px;
+  font-size:15px;
+}
+
+.total-row{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-top:20px;
+}
+
+.total-card{
+  flex:1;
+  background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+  color:white;
+  padding:18px 22px;
+  border-radius:18px;
+}
+
+/* ===================================================== */
+/* DASHBOARD */
+/* ===================================================== */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-top:25px;
+}
+
+.stat-card{
+  background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+  color:white;
+  padding:26px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.stat-title{font-size:14px;opacity:.85}
+.stat-value{font-size:32px;font-weight:800;margin-top:8px}
+
+/* ===================================================== */
+/* SEARCH CARD */
+/* ===================================================== */
+.search-card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+  margin:20px 0;
+}
+
+.filters{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+.search-group input{
+  padding:12px 15px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  width:250px;
+}
+
+/* ===================================================== */
+/* TABLE */
+/* ===================================================== */
+.table-card{
+  background:white;
+  border-radius:16px;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  overflow-x:auto;
+}
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:1200px;
+}
+
+.table th{
+  padding:16px;
+  background:#f8fafc;
+  text-align:left;
+}
+
+.table td{
+  padding:16px;
+  border-top:1px solid #f1f5f9;
+}
+
+/* BADGES */
+.badge{
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+  color:white;
+}
+.paid{background:#22c55e;}
+.dp{background:#f59e0b;}
+.cash{background:#3b82f6;}
+.gcash{background:#8b5cf6;}
+.delivery{background:#ef4444;}
+.pickup{background:#14b8a6;}
+
+/* ===================================================== */
+/* LOGIN PAGE FIX */
+/* ===================================================== */
+.login-page{
+  padding-top:0 !important;
+}
+
+.login-wrapper{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#1d4ed8,#3b82f6);
+}
+
+.login-card{
+  width:360px;
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  text-align:center;
+}
+
+.login-logo{width:90px;margin-bottom:15px}
+
+.login-btn{
+  width:100%;
+  margin-top:20px;
+  padding:14px;
+  border:none;
+  background:#1d4ed8;
+  color:#fff;
+  font-weight:bold;
+  border-radius:12px;
+}
+
+/* MOBILE */
+@media (max-width:900px){
+  .form-wide{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+}
+
+/* DASHBOARD CHART GRID */
+.chart-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  margin-top:25px;
+}
+
+.chart-panel{
+  padding:25px;
+}
+
+/* mobile responsive */
+@media (max-width:900px){
+  .chart-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== FINAL CHART SIZE FIX ===== */
+
+.chart-panel{
+  width:100%;
+  height:350px;        /* LIMIT HEIGHT */
+  padding:20px;
+}
+
+.chart-panel canvas{
+  width:100% !important;
+  height:260px !important;   /* eto ang magic */
+}
+
+/* SEARCH + RESET BUTTONS */
+.btn{
+    background: linear-gradient(135deg,#2d6cdf,#1e4fd1);
+    color:white;
+    border:none;
+    padding:9px 16px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+/* RESET BUTTON */
+.btn.light{
+    background:#eef2f7;
+    color:#2d3748;
+}
+
+.btn.light:hover{
+    background:#e2e8f0;
+}
+
+/* SMALL BUTTON (VIEW RECEIPT) */
+.btn.small{
+    padding:6px 12px;
+    font-size:13px;
+    border-radius:6px;
+}
+
+/* FIX LINK BUTTON STYLE */
+a.btn{
+    text-decoration:none;
+    display:inline-block;
+}
+
+/* GCASH BADGE (para mas bagay sa button) */
+.badge.gcash{
+    background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+    color:white;
+    padding:5px 10px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* ALIGN SEARCH AREA */
+form{
+    align-items:center !important;
+}
+
+.search-bar{
+    display:flex;
+    align-items:flex-end;
+    gap:12px;
+    margin:20px 0 25px;
+}
+
+.search-bar .field{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.search-bar label{
+    font-size:13px;
+    color:#6b7280;
+}
+
+.search-bar input{
+    padding:8px 12px;
+    border-radius:10px;
+    border:1px solid #e5e7eb;
+    height:38px;
+}
+
+/* SEARCH BAR FORM */
+.search-form{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+/* SOFT DELETE BUTTON */
+.btn-soft-delete{
+    background:#eef2f7;        /* light gray */
+    color:#2d3748;
+    height:40px;
+    padding:0 22px;
+    border-radius:14px;        /* pill shape */
+    font-size:14px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    border:1px solid #e5e7eb;
+    cursor:pointer;
+}
+
+.btn-soft-delete:hover{
+    background:#e5e7eb;
+}
+
+/* ===== PERFECT ALIGN FIX ===== */
+.date-filter{
+    display:flex;
+    gap:12px;
+    align-items:center; /* pantay sa gitna */
+}
+
+/* bawat field container */
+.date-filter > div{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+/* same height lahat */
+.date-filter input[type="date"],
+.date-filter .btn,
+.date-filter .btn-soft-delete{
+    height:40px;
+}
+
+/* REMOVE extra width para di humaba */
+.date-filter .btn,
+.date-filter .btn-soft-delete{
+    padding:0 18px;
+    min-width:auto; /* 🔥 eto ang magpipigil sa pag haba */
+}
+
+/* ================= INVENTORY PAGE ================= */
+
+.inventory-card{
+    margin-top:20px;
+}
+
+.inventory-card h2{
+    margin-top:0;
+    margin-bottom:15px;
+}
+
+.inventory-form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.inventory-btn{
+    width:160px;
+    height:42px;
+    font-size:14px;
+}
+
+/* INVENTORY TABLE STYLE */
+
+.inventory-table-card{
+    margin-top:30px;
+    padding:20px;
+}
+
+.table{
+    border-collapse:separate;
+    border-spacing:0;
+}
+
+.table th{
+    background:#f1f5f9;
+    font-weight:700;
+    font-size:14px;
+}
+
+.table td{
+    background:#ffffff;
+}
+
+.table tr:hover td{
+    background:#f8fbff;
+}
+
+/* STATUS COLORS */
+
+.status-ok{
+    color:#16a34a;
+    font-weight:600;
+}
+
+.status-low{
+    color:#f59e0b;
+    font-weight:600;
+}
+
+.status-critical{
+    color:#ef4444;
+    font-weight:700;
+}
+
+/* STOCK IN / OUT INPUT */
+
+.table input{
+    padding:8px 10px;
+    border-radius:8px;
+    border:1px solid #e2e8f0;
+    width:90px;
+}
+
+/* PLUS / MINUS BUTTON */
+
+.stock-btn{
+    margin-top:6px;
+    padding:5px 10px;
+    border-radius:6px;
+    border:none;
+    background:#e2e8f0;
+    cursor:pointer;
+}
+
+.stock-btn:hover{
+    background:#cbd5e1;
+}
+
