@@ -1,14 +1,1 @@
-# Private settings (passwords, API keys)
-config/config.php
-
-# Generated files
-qrcodes/*.png
-uploads/*
-!uploads/.gitkeep
-!qrcodes/.gitkeep
-
-# Tools and system files
-ngrok.exe
-*.log
-.DS_Store
-Thumbs.db
+#deny from all

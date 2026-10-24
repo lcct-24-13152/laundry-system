@@ -1,4 +1,1 @@
-<?php
-header("Location: auth/login.php");
-exit();
-?>
+<?php header("Location: www/"); ?>
